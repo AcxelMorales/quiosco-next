@@ -1,4 +1,4 @@
-import { OrderSidebar } from '@/components/order/OrderSidebar';
+import OrderSidebar from '@/components/order/OrderSidebar';
 import OrderSummary from '@/components/order/OrderSummary';
 
 export default function RootLayout({children}: Readonly<{children: React.ReactNode;}>) {
