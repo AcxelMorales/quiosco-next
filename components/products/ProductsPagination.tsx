@@ -25,6 +25,7 @@ export default function ProductsPagination({
       {pages.map(
         (currentPage): JSX.Element => (
           <Link
+          key={currentPage}
             className={`${
               page == currentPage ? "font-black bg-amber-400" : "bg-white"
             } px-4 py-2 text-sm text-gray-900 ring-1 ring-inset ring-gray-300 focus:z-20 focus:outline-offset-0`}
