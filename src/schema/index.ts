@@ -20,3 +20,23 @@ export const SchemaSearch = z.object({
     .trim()
     .min(1, { message: "La búsqueda no puede ir vacia" }),
 });
+
+export const ProductSchema = z.object({
+  name: z
+    .string()
+    .trim()
+    .min(1, { message: "El nombre del producto no puede ir vacio" }),
+  price: z
+    .string()
+    .trim()
+    .transform((value) => parseFloat(value))
+    .refine((value) => value > 0, { message: "Precio no válido" })
+    .or(z.number().min(1, { message: "La categoría es obligatoria" })),
+  categoryId: z
+    .string()
+    .trim()
+    .transform((value) => parseInt(value))
+    .refine((value) => value > 0, { message: "La categoría es obligatoria" })
+    .or(z.number().min(1, { message: "La categoría es obligatoria" })),
+  image: z.string().min(1, { message: "La imagen es obligatoria" }),
+});

@@ -9,7 +9,7 @@ export default function ProductsPagination({
   page,
   totalPages,
 }: ProductsPaginatorProps): JSX.Element {
-  const pages = Array.from({ length: 8 }, (_, i): number => i + 1);
+  const pages = Array.from({ length: totalPages }, (_, i): number => i + 1);
 
   return (
     <nav className="flex justify-center py-10">
