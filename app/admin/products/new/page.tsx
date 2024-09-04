@@ -1,7 +1,14 @@
-import React from 'react'
+import AddProductForm from '@/components/products/AddProductForm';
+import ProductForm from '@/components/products/ProductForm';
+import Heading from '@/components/ui/Heading';
 
-export default function page() {
+export default function page(): JSX.Element {
   return (
-    <div>page</div>
+    <>
+      <Heading>Nuevo producto</Heading>
+      <AddProductForm>
+        <ProductForm />
+      </AddProductForm>
+    </>
   )
 }
